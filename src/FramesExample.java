@@ -5,7 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class FramesExample {
 
 	public static void main(String[] args) {
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Bartek\\Documents\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Bartek\\Documents\\chromedriver1.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://the-internet.herokuapp.com");
 		driver.findElement(By.xpath("//a[contains(text(),'Nested Frames')]")).click();
@@ -22,6 +22,7 @@ public class FramesExample {
 		System.out.println(driver.findElement(By.id("content")).getText());
 		//switch to default
 		driver.switchTo().defaultContent();
+		driver.close();
 
 	}
 

@@ -9,8 +9,8 @@ public class Test2 {
 		WebDriver driver = new ChromeDriver();
 		driver.get("http://login.salesforce.com");
 		//driver.findElement(By.id("username")).sendKeys("siki weroniki");
-		driver.findElement(By.cssSelector("#username")).sendKeys("siki weroniki"); //the same ^
-		driver.findElement(By.id("password")).sendKeys("siki weroniki pass");
+		driver.findElement(By.cssSelector("#username")).sendKeys("bart"); //the same ^
+		driver.findElement(By.id("password")).sendKeys("passxd");
 		//driver.findElement(By.className("button r4 wide primary")).click(); //className compound must not have spaces!!!!
 		/*
 		driver.findElement(By.xpath("//*[@id=\"Login\"]")).click();

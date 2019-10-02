@@ -6,7 +6,7 @@ import org.testng.Assert;
 public class AssersExample {
 
 	public static void main(String[] args) {
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Bartek\\Documents\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Bartek\\Documents\\chromedriver1.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.get("http://qaclickacademy.com/practice.php");
 		
@@ -17,7 +17,6 @@ public class AssersExample {
 		
 		System.out.println(driver.findElements(By.xpath("//input[@type='checkbox']")).size());
 		
-
 	}
 
 }

@@ -8,7 +8,7 @@ import org.openqa.selenium.interactions.Actions;
 public class ActionsDemo {
 
 	public static void main(String[] args) {
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Bartek\\Documents\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Bartek\\Documents\\chromedriver1.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://amazon.com");
 		
@@ -25,6 +25,3 @@ public class ActionsDemo {
 	}
 
 }
-
-//nav-link-accountList
-//twotabsearchtextbox

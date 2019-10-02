@@ -1,13 +1,15 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 public class e2e {
 
 	public static void main(String[] args) throws InterruptedException {
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Bartek\\Documents\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Bartek\\Documents\\chromedriver1.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("http://spicejet.com");
@@ -16,7 +18,7 @@ public class e2e {
 		Select s = new Select(driver.findElement(By.xpath("//select[@id='ctl00_mainContent_DropDownListCurrency']")));
 		s.selectByValue("USD");
 		s.selectByIndex(2);
-		s.selectByVisibleText("SAR");
+		s.selectByVisibleText("INR");
 		
 		//button in dropdown menu
 		driver.findElement(By.xpath("//*[@id=\"divpaxinfo\"]")).click();
@@ -63,8 +65,14 @@ public class e2e {
 			Assert.assertTrue(true);
 		} else { Assert.assertTrue(false); } //bo roundtrip selected
 		
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='ctl00_mainContent_btn_FindFlights']")));
 		driver.findElement(By.cssSelector("#ctl00_mainContent_btn_FindFlights")).click();
-
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#taxAndFeeInclusiveDivHeader")));
+		Assert.assertTrue(driver.findElement(By.id("taxAndFeeInclusiveDivHeader")).isDisplayed());
+		
+		driver.close();
 	}
 
 }

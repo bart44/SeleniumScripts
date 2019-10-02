@@ -7,7 +7,7 @@ import org.testng.Assert;
 public class Spicejet0 {
 
 	public static void main(String[] args) throws InterruptedException {
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Bartek\\Documents\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Bartek\\Documents\\chromedriver1.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("http://spicejet.com");
@@ -16,7 +16,7 @@ public class Spicejet0 {
 		Select s = new Select(driver.findElement(By.xpath("//select[@id='ctl00_mainContent_DropDownListCurrency']")));
 		s.selectByValue("USD");
 		s.selectByIndex(2);
-		s.selectByVisibleText("SAR");
+		s.selectByVisibleText("INR");
 		
 		//button in dropdown menu
 		driver.findElement(By.xpath("//*[@id=\"divpaxinfo\"]")).click();
@@ -57,6 +57,8 @@ public class Spicejet0 {
 		driver.findElement(By.cssSelector("#ctl00_mainContent_rbtnl_Trip_1")).click();
 		driver.findElement(By.xpath("//div[@id='Div1']//button[contains(@class,'ui-datepicker-trigger')]")).click();
 		driver.findElement(By.xpath("//a[contains(@class,'ui-state-default ui-state-active')]")).click();
+		
+		driver.close();
 		
 	}
 

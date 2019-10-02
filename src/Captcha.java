@@ -26,7 +26,7 @@ public class Captcha {
 	}
 
 	public static void main(String[] args) throws InterruptedException {
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Bartek\\Documents\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Bartek\\Documents\\chromedriver1.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.manage().deleteAllCookies();
 		driver.get("https://www.google.com/recaptcha/api2/demo");
@@ -55,4 +55,3 @@ public class Captcha {
 
 	}
 }
-//*[@id="rc-imageselect"]/div[2]/div[4]
